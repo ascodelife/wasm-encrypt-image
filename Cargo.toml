@@ -1,0 +1,40 @@
+[package]
+name = "wasm-encrypt-image"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = { version = "0.2", features = ["serde-serialize"] }
+wasm-bindgen-futures = "0.4.29"
+serde = { version = "1.0", features = ["derive"] }
+image = "0.24.1"
+imageproc = { git = "https://github.com/image-rs/imageproc" }
+rusttype = "0.9.2"
+js-sys = "0.3.56"
+
+[dependencies.web-sys]
+version = "0.3"
+features = [
+  'Document',
+  'Element',
+  "HtmlImageElement",
+  'HtmlElement',
+  'Node',
+  'Window',
+  'CssStyleDeclaration',
+
+  'CanvasRenderingContext2d',
+  'HtmlCanvasElement',
+  'ImageData',
+
+  'Headers',
+  'Request',
+  'RequestInit',
+  'RequestMode',
+  'Response',
+]
